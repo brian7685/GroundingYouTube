@@ -5,8 +5,14 @@ This repo has the implementation of our paper: [What, when, and where? -- Self-S
 
 ![figure](figure.png)
 
-Getting Started
 
+## Getting Started
+
+
+```
+$ pip install requirements.txt
+```
+**************************************************************
 
 ## Train Model
 
@@ -20,5 +26,18 @@ $ python -u main_distributed.py  --batch_size=64  \
 
 
 
-Running the tests
+## Test Model
+
+```
+$ CUDA_VISIBLE_DEVICE=1 python -W ignore eval_mining_clip_iou.py \
+--eval_video_root $video_path \
+--youcook2_annotations_path mining_anno/seg.json \
+--interactions_annotations_path mining_anno/id2xy_box.json \
+--checkpoint_eval \
+checkpoint/nce_b64_globalF_CLIP_1fps_8frame_num_sec_control8_local_select_sink/epoch0009.pth.tar
+
+```
+**************************************************************
+
+
 

@@ -1,0 +1,122 @@
+{
+    "Gf4eEhDpxgk":
+    [
+        {
+            "segment":
+            [
+                44,
+                50
+            ],
+            "id": 0,
+            "sentence": "crack egg"
+        },
+        {
+            "segment":
+            [
+                55,
+                61
+            ],
+            "id": 1,
+            "sentence": "crack egg"
+        },
+        {
+            "segment":
+            [
+                74,
+                88
+            ],
+            "id": 2,
+            "sentence": "beat egg"
+        },
+        {
+            "segment":
+            [
+                99,
+                102
+            ],
+            "id": 3,
+            "sentence": "preheat pan"
+        },
+        {
+            "segment":
+            [
+                113,
+                117
+            ],
+            "id": 4,
+            "sentence": "mix egg"
+        },
+        {
+            "segment":
+            [
+                130,
+                133
+            ],
+            "id": 5,
+            "sentence": "add butter"
+        },
+        {
+            "segment":
+            [
+                138,
+                144
+            ],
+            "id": 6,
+            "sentence": "melt butter"
+        },
+        {
+            "segment":
+            [
+                157,
+                163
+            ],
+            "id": 7,
+            "sentence": "pour egg"
+        },
+        {
+            "segment":
+            [
+                191,
+                204
+            ],
+            "id": 8,
+            "sentence": "use spatula"
+        },
+        {
+            "segment":
+            [
+                221,
+                227
+            ],
+            "id": 9,
+            "sentence": "stir egg"
+        },
+        {
+            "segment":
+            [
+                239,
+                246
+            ],
+            "id": 10,
+            "sentence": "stir egg"
+        },
+        {
+            "segment":
+            [
+                250,
+                256
+            ],
+            "id": 11,
+            "sentence": "plate egg"
+        },
+        {
+            "segment":
+            [
+                263,
+                266
+            ],
+            "id": 12,
+            "sentence": "eat egg"
+        }
+    ]
+}

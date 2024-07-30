@@ -43,7 +43,7 @@ checkpoint/nce_b64_globalF_CLIP_1fps_8frame_num_sec_control8_local_select_sink/e
 
 CLIP backbone finetuned on HowTo100M [Google Dirve](https://drive.google.com/file/d/1PDCySq8qAlm9dqxJE-DkpO1w2mjren7W/view?usp=drive_link)
 
-Model weights[Google Dirve](https://drive.google.com/file/d/135ivdZTKA_F-UwwRzGYPSMeG1W3-4H4A/view?usp=drive_link)
+Model weights [Google Dirve](https://drive.google.com/file/d/135ivdZTKA_F-UwwRzGYPSMeG1W3-4H4A/view?usp=drive_link)
 
 **************************************************************
 

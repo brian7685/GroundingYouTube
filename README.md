@@ -24,7 +24,24 @@ $ conda create -n stg --file req.txt
 
 ### [Grounding YouTube](https://github.com/brian7685/STG)
 
+
 **************************************************************
+
+## Checkpoints
+
+Put the checkpoints under checkpoint folder
+
+checkpoint
+   |-finetuned_CLIP_howto.pth.tar
+   |-GroundingWeights.pth.tar
+
+CLIP backbone finetuned on HowTo100M [Google Dirve](https://drive.google.com/file/d/1PDCySq8qAlm9dqxJE-DkpO1w2mjren7W/view?usp=drive_link)
+
+
+Model weights [Google Dirve](https://drive.google.com/file/d/135ivdZTKA_F-UwwRzGYPSMeG1W3-4H4A/view?usp=drive_link)
+
+**************************************************************
+
 
 ## Train Model
 
@@ -68,19 +85,10 @@ CUDA_VISIBLE_DEVICE=1 python -W ignore eval_youcook_clip_finetune.py \
 --interactions_segments_path YouCook2-Interactions/final_dataset_segments.pkl  \
 --pretrain_clip \
 /nobackup/users/brian27/ECCV22/video-grounding-narrations/checkpoint/nce_b96_globalF_CLIP_1fps_8frame_finetune_0912/epoch0033.pth.tar \
---checkpoint_eval \
-/nobackup/users/brian27/ECCV22/video-grounding-narrations/checkpoint/init_selfCLIP_single_train/epoch0030.pth.tar
+--checkpoint_eval GroundingWeights.pth.tar
 ```
 
 **************************************************************
 
-## Checkpoints
-
-
-CLIP backbone finetuned on HowTo100M [Google Dirve](https://drive.google.com/file/d/1PDCySq8qAlm9dqxJE-DkpO1w2mjren7W/view?usp=drive_link)
-
-Model weights [Google Dirve](https://drive.google.com/file/d/135ivdZTKA_F-UwwRzGYPSMeG1W3-4H4A/view?usp=drive_link)
-
-**************************************************************
 
 

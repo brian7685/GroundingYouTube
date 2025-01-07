@@ -31,9 +31,11 @@ $ conda create -n stg --file req.txt
 
 Put the checkpoints under checkpoint folder
 
+'''
 checkpoint
    |-finetuned_CLIP_howto.pth.tar
    |-GroundingWeights.pth.tar
+'''
 
 CLIP backbone finetuned on HowTo100M [Google Dirve](https://drive.google.com/file/d/1PDCySq8qAlm9dqxJE-DkpO1w2mjren7W/view?usp=drive_link)
 

@@ -30,7 +30,7 @@ $ conda create -n stg --file req.txt
 ## Checkpoints
 
 Put the checkpoints under checkpoint folder
-
+ 
 '''
 checkpoint
    |-finetuned_CLIP_howto.pth.tar

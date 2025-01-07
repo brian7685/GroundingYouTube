@@ -23,6 +23,10 @@ $ conda activate stg
          ├── annotation
          ├── validation
                 └── *.mp4  (442 videos)
+     └── GroundingYouTube
+         ├── annotation
+         ├── test
+                └── *.mp4  ( videos)
 ```
 
 ### [YouCook2-Interactions](https://github.com/rxtan2/video-grounding-narrations?tab=readme-ov-file)
@@ -48,7 +52,6 @@ Put the checkpoints under checkpoint folder
 ```
 
 CLIP backbone finetuned on HowTo100M [Google Dirve](https://drive.google.com/file/d/1PDCySq8qAlm9dqxJE-DkpO1w2mjren7W/view?usp=drive_link)
-
 
 Model weights [Google Dirve](https://drive.google.com/file/d/135ivdZTKA_F-UwwRzGYPSMeG1W3-4H4A/view?usp=drive_link)
 
@@ -92,9 +95,9 @@ Evaluate youcook-inter with finetuned clip
 ```
 CUDA_VISIBLE_DEVICE=1 python -W ignore eval_youcook_clip_finetune.py \
 --eval_video_root /nobackup/users/brian27/ECCV22/mil_nce/my_data/youcook/validation_all/ \
---youcook2_annotations_path youcookii_annotations_trainval.json \
---interactions_annotations_path YouCook2-Interactions/final_dataset_annotations.pkl \
---interactions_segments_path YouCook2-Interactions/final_dataset_segments.pkl  \
+--youcook2_annotations_path data/Youcook2/annotation/youcookii_annotations_trainval.json \
+--interactions_annotations_path data/Youcook2/annotation/YouCook2-Interactions/final_dataset_annotations.pkl \
+--interactions_segments_path data/Youcook2/annotation/YouCook2-Interactions/final_dataset_segments.pkl  \
 --pretrain_clip \
 /nobackup/users/brian27/ECCV22/video-grounding-narrations/checkpoint/nce_b96_globalF_CLIP_1fps_8frame_finetune_0912/epoch0033.pth.tar \
 --checkpoint_eval GroundingWeights.pth.tar

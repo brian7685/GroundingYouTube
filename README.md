@@ -22,7 +22,7 @@ $ conda create -n stg --file req.txt
 
 ### Mining YouTube
 
-### Grounding YouTube
+### [Grounding YouTube](https://github.com/brian7685/STG)
 
 **************************************************************
 

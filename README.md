@@ -36,6 +36,19 @@ $ CUDA_VISIBLE_DEVICE=1 python -W ignore eval_mining_clip_iou.py \
 checkpoint/nce_b64_globalF_CLIP_1fps_8frame_num_sec_control8_local_select_sink/epoch0009.pth.tar
 
 ```
+
+Evaluate youcook-inter with finetuned clip
+```
+CUDA_VISIBLE_DEVICE=1 python -W ignore eval_youcook_clip_finetune.py \
+--eval_video_root /nobackup/users/brian27/ECCV22/mil_nce/my_data/youcook/validation_all/ \
+--youcook2_annotations_path youcookii_annotations_trainval.json \
+--interactions_annotations_path YouCook2-Interactions/final_dataset_annotations.pkl \
+--interactions_segments_path YouCook2-Interactions/final_dataset_segments.pkl  \
+--pretrain_clip checkpoint/nce_b96_globalF_CLIP_1fps_8frame_finetune_0912/epoch0033.pth.tar \
+--checkpoint_eval \
+checkpoint/init_selfCLIP_single_train/epoch0030.pth.tar
+```
+
 **************************************************************
 
 ## Checkpoints

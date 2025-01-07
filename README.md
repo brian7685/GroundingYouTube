@@ -11,7 +11,17 @@ This repo has the implementation of our paper: [What, when, and where? -- Self-S
 
 ```
 $ pip install requirements.txt
+$ conda create -n stg --file req.txt
 ```
+
+**************************************************************
+
+## Datasets
+
+### Youcook inter
+
+### Mining Youtube
+
 **************************************************************
 
 ## Train Model
@@ -44,9 +54,10 @@ CUDA_VISIBLE_DEVICE=1 python -W ignore eval_youcook_clip_finetune.py \
 --youcook2_annotations_path youcookii_annotations_trainval.json \
 --interactions_annotations_path YouCook2-Interactions/final_dataset_annotations.pkl \
 --interactions_segments_path YouCook2-Interactions/final_dataset_segments.pkl  \
---pretrain_clip checkpoint/nce_b96_globalF_CLIP_1fps_8frame_finetune_0912/epoch0033.pth.tar \
+--pretrain_clip \
+/nobackup/users/brian27/ECCV22/video-grounding-narrations/checkpoint/nce_b96_globalF_CLIP_1fps_8frame_finetune_0912/epoch0033.pth.tar \
 --checkpoint_eval \
-checkpoint/init_selfCLIP_single_train/epoch0030.pth.tar
+/nobackup/users/brian27/ECCV22/video-grounding-narrations/checkpoint/init_selfCLIP_single_train/epoch0030.pth.tar
 ```
 
 **************************************************************

@@ -28,6 +28,11 @@ def get_args(description='MILNCE'):
         default='./pretrained_checkpoints/epoch0005.pth.tar',
         help='checkpoint dir root')
     parser.add_argument(
+        '--pretrain_clip',
+        type=str,
+        default='./pretrained_checkpoints/epoch0005.pth.tar',
+        help='clip checkpoint dir root')
+    parser.add_argument(
         '--log_root',
         type=str,
         default='log',

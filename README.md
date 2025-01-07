@@ -55,73 +55,47 @@ CLIP backbone finetuned on HowTo100M [Google Dirve](https://drive.google.com/fil
 
 Model weights [Google Dirve](https://drive.google.com/file/d/135ivdZTKA_F-UwwRzGYPSMeG1W3-4H4A/view?usp=drive_link)
 
-**************************************************************
 
-
-## Train Model
-
-```
-$ python -u main_distributed.py  --batch_size=64  \
---lr=1e-4 --epochs=15 --globalF  \
---CLIP --fps 1 --num_frames 8 --num_sec_control 8 --longer_frame --local_select \
---sink --checkpoint_dir=nce_b64_globalF_CLIP_1fps_8frame_num_sec_control8_local_select_sink
-```
-
-
-Train with finetuned CLIP
-```
-python -u main_distributed_freeze.py  --batch_size=64  \
---lr=1e-4 --epochs=150 --globalF  \
---CLIP --fps 1 --num_frames 8 --resume \
---pretrain_clip checkpoint/nce_b96_globalF_CLIP_1fps_8frame_finetune_0912/epoch0033.pth.tar \
---checkpoint_dir=init_selfCLIP_single_train
-```
 **************************************************************
 
 
 ## Test Model
 
-```
-$ CUDA_VISIBLE_DEVICE=1 python -W ignore eval_mining_clip_iou.py \
---eval_video_root $video_path \
---youcook2_annotations_path mining_anno/seg.json \
---interactions_annotations_path mining_anno/id2xy_box.json \
---checkpoint_eval \
-checkpoint/nce_b64_globalF_CLIP_1fps_8frame_num_sec_control8_local_select_sink/epoch0009.pth.tar
-
-
-CUDA_VISIBLE_DEVICE=1 python -W ignore eval_mining_clip_finetune.py \
---eval_video_root /nobackup/users/brian27/howto100m_public/datasets/mining_youtube/resized_video3/ \
---youcook2_annotations_path /nobackup/users/brian27/ECCV22/video-grounding-narrations/mining_anno/seg.json \
---interactions_annotations_path /nobackup/users/brian27/ECCV22/video-grounding-narrations/mining_anno/id2xy_box.json \
---interactions_segments_path YouCook2-Interactions/final_dataset_segments.pkl \
---pretrain_clip \
-/nobackup/users/brian27/ECCV22/video-grounding-narrations/checkpoint/nce_b96_globalF_CLIP_1fps_8frame_finetune_0912/epoch0033.pth.tar \
---checkpoint_eval GroundingWeights.pth.tar
-
-CUDA_VISIBLE_DEVICE=1 python -W ignore eval_mining_clip_iou_finetune.py \
---eval_video_root /nobackup/users/brian27/howto100m_public/datasets/mining_youtube/resized_video3/ \
---youcook2_annotations_path data/GroundingYouTube/grounding_anno/seg.json \
---interactions_annotations_path data/GroundingYouTube/grounding_anno/id2xy_box.json \
---pretrain_clip \
-/nobackup/users/brian27/ECCV22/video-grounding-narrations/checkpoint/nce_b96_globalF_CLIP_1fps_8frame_finetune_0912/epoch0033.pth.tar \
---checkpoint_eval GroundingWeights.pth.tar
-
-```
-
 Evaluate youcook-inter with finetuned clip
 ```
 CUDA_VISIBLE_DEVICE=1 python -W ignore eval_youcook_clip_finetune.py \
---eval_video_root /nobackup/users/brian27/ECCV22/mil_nce/my_data/youcook/validation_all/ \
+--eval_video_root data/Youcook2/validation/ \
 --youcook2_annotations_path data/Youcook2/annotation/youcookii_annotations_trainval.json \
 --interactions_annotations_path data/Youcook2/annotation/YouCook2-Interactions/final_dataset_annotations.pkl \
 --interactions_segments_path data/Youcook2/annotation/YouCook2-Interactions/final_dataset_segments.pkl  \
---pretrain_clip \
-/nobackup/users/brian27/ECCV22/video-grounding-narrations/checkpoint/nce_b96_globalF_CLIP_1fps_8frame_finetune_0912/epoch0033.pth.tar \
---checkpoint_eval GroundingWeights.pth.tar
+--pretrain_clip checkpoint/finetuned_CLIP_howto.pth.tar \
+--checkpoint_eval checkpoint/GroundingWeights.pth.tar
+```
+
+Evaluate GroundingYouTube with finetuned clip
+```
+CUDA_VISIBLE_DEVICE=1 python -W ignore eval_mining_clip_iou_finetune.py \
+--eval_video_root data/GroundingYouTube/test/ \
+--youcook2_annotations_path data/GroundingYouTube/grounding_anno/seg.json \
+--interactions_annotations_path data/GroundingYouTube/grounding_anno/id2xy_box.json \
+--pretrain_clip checkpoint/finetuned_CLIP_howto.pth.tar \
+--checkpoint_eval checkpoint/GroundingWeights.pth.tar
 ```
 
 **************************************************************
 
 
 
+
+If you're using GroundingYouTube in your research or applications, please cite using this BibTeX:
+
+```
+@InProceedings{Chen_2024_CVPR,
+    author    = {Chen, Brian and Shvetsova, Nina and Rouditchenko, Andrew and Kondermann, Daniel and Thomas, Samuel and Chang, Shih-Fu and Feris, Rogerio and Glass, James and Kuehne, Hilde},
+    title     = {What When and Where? Self-Supervised Spatio-Temporal Grounding in Untrimmed Multi-Action Videos from Narrated Instructions},
+    booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+    month     = {June},
+    year      = {2024},
+    pages     = {18419-18429}
+}
+```

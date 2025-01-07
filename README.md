@@ -89,6 +89,24 @@ $ CUDA_VISIBLE_DEVICE=1 python -W ignore eval_mining_clip_iou.py \
 --checkpoint_eval \
 checkpoint/nce_b64_globalF_CLIP_1fps_8frame_num_sec_control8_local_select_sink/epoch0009.pth.tar
 
+
+CUDA_VISIBLE_DEVICE=1 python -W ignore eval_mining_clip_finetune.py \
+--eval_video_root /nobackup/users/brian27/howto100m_public/datasets/mining_youtube/resized_video3/ \
+--youcook2_annotations_path /nobackup/users/brian27/ECCV22/video-grounding-narrations/mining_anno/seg.json \
+--interactions_annotations_path /nobackup/users/brian27/ECCV22/video-grounding-narrations/mining_anno/id2xy_box.json \
+--interactions_segments_path YouCook2-Interactions/final_dataset_segments.pkl \
+--pretrain_clip \
+/nobackup/users/brian27/ECCV22/video-grounding-narrations/checkpoint/nce_b96_globalF_CLIP_1fps_8frame_finetune_0912/epoch0033.pth.tar \
+--checkpoint_eval GroundingWeights.pth.tar
+
+CUDA_VISIBLE_DEVICE=1 python -W ignore eval_mining_clip_iou_finetune.py \
+--eval_video_root /nobackup/users/brian27/howto100m_public/datasets/mining_youtube/resized_video3/ \
+--youcook2_annotations_path data/GroundingYouTube/grounding_anno/seg.json \
+--interactions_annotations_path data/GroundingYouTube/grounding_anno/id2xy_box.json \
+--pretrain_clip \
+/nobackup/users/brian27/ECCV22/video-grounding-narrations/checkpoint/nce_b96_globalF_CLIP_1fps_8frame_finetune_0912/epoch0033.pth.tar \
+--checkpoint_eval GroundingWeights.pth.tar
+
 ```
 
 Evaluate youcook-inter with finetuned clip

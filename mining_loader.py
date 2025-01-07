@@ -54,7 +54,7 @@ class Mining_DataLoader(Dataset):
         
         self.annotations = json.load(open(args.youcook2_annotations_path))
         final_dataset = json.load(open(args.interactions_annotations_path))
-        final_segments = pickle.load(open(args.interactions_segments_path, 'rb'))
+        #final_segments = pickle.load(open(args.interactions_segments_path, 'rb'))
         
         self.vis_clips = []
         self.selected_clips = {}

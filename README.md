@@ -19,17 +19,21 @@ $ conda activate stg
 ## Datasets
 ```
  ├── data
-     └── Youcook
+     └── Youcook2
          ├── annotation
-         ├── feature  
+         ├── validation
+                └── *.mp4  (442 videos)
 ```
 
-### Youcook inter
+### [YouCook2-Interactions](https://github.com/rxtan2/video-grounding-narrations?tab=readme-ov-file)
 
-### Mining YouTube
+Raw videos are [here](https://huggingface.co/datasets/lmms-lab/YouCook2), we use the validation set 
+
+### [Mining YouTube](https://github.com/hildekuehne/Mining_YouTube_dataset)
 
 ### [Grounding YouTube](https://github.com/brian7685/STG)
 
+Raw videos for Mining YouTube and Grounding YouTube are [here](https://github.com/brian7685/STG)
 
 **************************************************************
 

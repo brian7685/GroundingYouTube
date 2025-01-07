@@ -34,6 +34,16 @@ $ python -u main_distributed.py  --batch_size=64  \
 --CLIP --fps 1 --num_frames 8 --num_sec_control 8 --longer_frame --local_select \
 --sink --checkpoint_dir=nce_b64_globalF_CLIP_1fps_8frame_num_sec_control8_local_select_sink
 ```
+
+
+Train with finetuned CLIP
+```
+python -u main_distributed_freeze.py  --batch_size=64  \
+--lr=1e-4 --epochs=150 --globalF  \
+--CLIP --fps 1 --num_frames 8 --resume \
+--pretrain_clip checkpoint/nce_b96_globalF_CLIP_1fps_8frame_finetune_0912/epoch0033.pth.tar \
+--checkpoint_dir=init_selfCLIP_single_train
+```
 **************************************************************
 
 
